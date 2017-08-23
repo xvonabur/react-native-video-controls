@@ -78,7 +78,7 @@ export default class VideoPlayer extends Component {
          */
         this.methods = {
             onBack: this.props.onBack || this._onBack.bind( this ),
-            toggleFullscreen: this._toggleFullscreen.bind( this ),
+            toggleFullscreen: this.props.toggleFullscreen || this._toggleFullscreen.bind( this ),
             togglePlayPause: this._togglePlayPause.bind( this ),
             toggleControls: this._toggleControls.bind( this ),
             toggleTimer: this._toggleTimer.bind( this ),
