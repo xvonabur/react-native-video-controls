@@ -49,7 +49,6 @@ export default class VideoPlayer extends Component {
             currentTime: 0,
             error: false,
             duration: 0,
-            showFullscreenBtn: this.props.showFullscreenBtn || true
         };
 
         /**
@@ -60,6 +59,7 @@ export default class VideoPlayer extends Component {
             playInBackground: this.props.playInBackground || false,
             repeat: this.props.repeat || false,
             title: this.props.title || '',
+            hideFullscreenBtn: this.props.hideFullscreenBtn || false
         };
 
         /**
@@ -804,7 +804,7 @@ export default class VideoPlayer extends Component {
                         { this.renderBack() }
                         <View style={ styles.controls.pullRight }>
                             { this.renderVolume() }
-                            { this.state.showFullscreenBtn && this.renderFullscreen() }
+                            { !this.opts.hideFullscreenBtn && this.renderFullscreen() }
                         </View>
                     </View>
                 </Image>
